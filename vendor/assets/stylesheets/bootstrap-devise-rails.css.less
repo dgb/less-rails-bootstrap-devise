@@ -1,0 +1,73 @@
+//= require 'twitter/bootstrap'
+@import "twitter/bootstrap/variables";
+@import "twitter/bootstrap/mixins";
+@import "twitter/bootstrap/patterns";
+
+.devise {
+	margin-top:20px;
+	.columns(7);
+	.offset(4);
+	h2 {
+		margin-left: 150px;
+		margin-bottom: 15px;
+		font-size: 20px;
+		font-weight:normal;
+		color: @grayDark;
+	}
+	form {
+		div {
+			margin-bottom: @baseline;
+			a {
+				margin:0;
+				&:after { content:'\0000a0'; }
+				&:before { content:none; }
+			}
+		}
+		br, i {
+			display:none;
+		}
+		input {
+			margin-left: 20px;
+		}
+		/* Oh, dear... */
+		label[for=user_remember_me] {
+			padding:0;
+			position:relative;
+			left:130px;
+		}
+		input[type=submit] {
+			margin-left:150px;
+      .btn.primary;
+		}
+	}
+	a, h3, p{
+		margin-left:150px;
+	}
+	p {
+		a {
+			margin:0;
+			&:before { content:none; }
+		}
+	}
+	a:before, p:before {
+		content:'\002022\0000a0';
+	}
+	#error_explanation {
+		.alert-message.block-message.error;
+		margin-left:150px;
+
+		text-shadow:none;
+		h2 {
+			font-size:13px;
+			line-height:18px;
+			font-weight:bold;
+			margin:0 0 6px 0;
+		}
+		h2, li {
+			color:white;
+		}
+		a {
+			.alert-message.close
+		}
+	}
+}
