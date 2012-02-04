@@ -1,73 +1,51 @@
 //= require 'twitter/bootstrap'
 @import "twitter/bootstrap/variables";
 @import "twitter/bootstrap/mixins";
-@import "twitter/bootstrap/patterns";
-
+@import "twitter/bootstrap/alerts";
+@import "twitter/bootstrap/buttons";
+@import "twitter/bootstrap/forms";
 .devise {
-	margin-top:20px;
-	.columns(7);
-	.offset(4);
-	h2 {
-		margin-left: 150px;
-		margin-bottom: 15px;
-		font-size: 20px;
-		font-weight:normal;
-		color: @grayDark;
-	}
-	form {
-		div {
-			margin-bottom: @baseline;
-			a {
-				margin:0;
-				&:after { content:'\0000a0'; }
-				&:before { content:none; }
-			}
-		}
-		br, i {
-			display:none;
-		}
-		input {
-			margin-left: 20px;
-		}
-		/* Oh, dear... */
-		label[for=user_remember_me] {
-			padding:0;
-			position:relative;
-			left:130px;
-		}
-		input[type=submit] {
-			margin-left:150px;
-      .btn.primary;
-		}
-	}
-	a, h3, p{
-		margin-left:150px;
-	}
-	p {
-		a {
-			margin:0;
-			&:before { content:none; }
-		}
-	}
-	a:before, p:before {
-		content:'\002022\0000a0';
-	}
-	#error_explanation {
-		.alert-message.block-message.error;
-		margin-left:150px;
-
-		text-shadow:none;
-		h2 {
-			font-size:13px;
-			line-height:18px;
-			font-weight:bold;
-			margin:0 0 6px 0;
-		}
-		h2, li {
-			color:white;
-		}
-		a {
-			.alert-message.close
-		}
-	}
+  br { display:none; }
+  // Copied from forms.less's legend
+  > h2, > h3 {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: @baseLineHeight * 1.5;
+    font-size: @baseFontSize * 1.5;
+    line-height: @baseLineHeight * 2;
+    color: @grayDark;
+    border: 0;
+    border-bottom: 1px solid #eee;
+  }
+  > h2, >h3 {
+    margin-bottom: @baseLineHeight;
+  }
+  form {
+    // Base form styles
+    margin:0;
+    label[for=user_remember_me] { display: inline; }
+    input[type=submit] {
+      .btn-primary;
+      .btn-large;
+      margin:6px 0;
+    }
+    i { display: block; }
+    // Errors
+    #error_explanation {
+      h2 {
+        line-height: @baseLineHeight;
+        font-size: 14px;
+        .alert-error;
+      }
+      ul { margin-bottom: 0; }
+      .alert;
+      .alert-error;
+    }
+    .field_with_errors {
+      .control-group .error;
+    }
+  }
+  a:last-of-type:after { content: ''; }
+  a:after { content: '\0020\007c'; }
 }
