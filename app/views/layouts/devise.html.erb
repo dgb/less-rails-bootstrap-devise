@@ -1,0 +1,12 @@
+<% content_for :content do %>
+  <% if notice %>
+  <p class="alert alert-info"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+  <p class="alert"><%= alert %></p>
+  <% end %>
+<div class="devise">
+	<%= yield %>
+</div>
+<% end %>
+<%= render :template => 'layouts/application' %>
