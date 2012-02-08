@@ -2,9 +2,7 @@
 
 ## Installation and use
 
-Install the gem:
-
-In your application's Gemfile:
+List the gem in your application's Gemfile:
 
     gem "less-rails-bootstrap-devise"
 
@@ -12,11 +10,11 @@ Bundle your application
 
     bundle install
 
-In your stylesheet (e.g. app/assets/stylesheets/application.css):
+Require the styles in your stylesheet (e.g. app/assets/stylesheets/application.css):
 
     //= require 'bootstrap/devise'
 
-In your application.html.erb, replace your yield statement with:
+Replace your yield statement in application.html.erb with:
 
-   <%= content_for?(:content) ? yield(:content) : yield %>
-    
+    <%= content_for?(:content) ? yield(:content) : yield %> 
+
